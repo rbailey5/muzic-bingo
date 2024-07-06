@@ -1,6 +1,6 @@
 # MUZIC Bingo Card Generator
 
-A simple web based to for created cards for the amazing game of MUZIC Bingo.
+A simple web based tool for created cards for the amazing game of MUZIC Bingo.
 
 ## How To Guide
 
