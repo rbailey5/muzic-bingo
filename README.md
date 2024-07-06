@@ -1,2 +1,2 @@
 # muzic-bingo
-A we based generator for special bungo cards.
+A web based generator for special bungo cards.
