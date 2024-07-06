@@ -1,0 +1,163 @@
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    min-width: 300px;
+    margin: 60px auto;
+    padding: 20px;
+    border: #000 2px solid;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.control-panel label {
+    font-weight: bold;
+}
+
+.control-panel > input not([type="number"]) {
+    width: 45%;
+    min-width: 200px;
+}
+
+
+
+.control-panel > input[type="file"] {
+    border: #000 1px solid;
+}
+
+
+.hide-on-screen {
+    display: none;
+}
+
+#controls {
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 50vw;
+    height: 50vw;
+    margin: 20px;
+    page-break-after: always; /* Ensure each card is on a new page when printing */
+}
+
+.header-cell {
+    display: none;
+}
+
+.cell {
+    border: 1px solid #000;
+    display: flex;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+    padding: 10px;
+}
+
+.cell span {
+    display: block;
+}
+
+.title-text {
+    font-size: 16px;
+}
+
+.artist-text {
+    font-size: 14px;
+}
+
+
+
+.free-space > div {
+    font-family: 'Consolas', monospace;
+    position:relative;
+    font-size: 4vw;
+    font-weight: bold;
+    transform: rotate(45deg);
+}
+
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .hide-on-screen {
+        all: unset;
+    }
+
+    .hide-on-print {
+        display: none;
+    }
+
+    .card-container {
+        display: block;
+    }
+
+    .card {
+        grid-template-rows: repeat(6, 1fr);
+        margin: 0 auto;
+        width: 90vw; /* Adjust width for printing */
+        height: 90vw; /* Adjust height for printing */
+        transform: translate(
+            0, 15%
+        );
+    }
+
+    .header-cell {
+        display: block;
+        border: 1px solid #000;
+        text-align: center;
+        font-size: 6vw;
+        font-weight: bolder;
+        padding: 10px 0;
+    }
+
+    .cell {
+        font-size: 2.5vw; /* Adjust font size for printing */
+        width: calc(90vw / 5);
+        height: calc(90vw / 5);
+    }
+
+    .title-text {
+        line-height: 1.2;
+        font-size: 2.5vw;
+        font-weight: bold;
+    }
+
+    .artist-text {
+        line-height: 1.2;
+        font-size: 2.25vw;
+        font-style: italic;
+    }
+
+    .free-space > div {
+        font-size: 5vw;
+    }
+
+
+    .artist-text:only-child,
+    .title-text:only-child {
+        line-height: 1.15;
+        font-size: 2.4vw;
+        font-weight: bold;
+        font-style: italic;
+    }
+}
