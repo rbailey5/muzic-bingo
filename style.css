@@ -155,6 +155,7 @@
 
     .artist-text:only-child,
     .title-text:only-child {
+        line-height: 1.0;
         font-size: 2.3vw;
         font-weight: bold;
         font-style: italic;
