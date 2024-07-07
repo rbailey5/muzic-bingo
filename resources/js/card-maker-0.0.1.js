@@ -7,6 +7,7 @@ $(document).ready(function() {
         const file = event.target.files[0];
         if (file) {
             Papa.parse(file, {
+                skipEmptyLines: true,
                 complete: function(results) {
                     bingoData = results.data.map(row => row.filter(item => item.trim() !== '')); // Filter out empty strings
                 }
